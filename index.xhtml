@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/XHtml.xhtml to edit this template
+-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:rich="http://richfaces.org/rich"
+      xmlns:a4j="http://richfaces.org/a4j"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+     <!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <h:head>
+  
+    <title>Results</title>
+  </h:head>
+  <h:body>
+		<h1>Results</h1>
+		<h2><h:outputText value="#{resultController.getResult}" /> Result</h2>
+		<h:form>
+			<h:dataTable value="#{resultController.library}" var="result">
+				<h:column>
+					<f:facet name="header">Id</f:facet>
+					<h:outputText value="#{result.nr}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">Name</f:facet>
+					<h:outputText value="#{result.description}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">Manage</f:facet>
+					<h:commandButton action="#{resultController.result(result)}" 
+													 value="Details"/> | 
+					<h:commandButton action="#{resultController.edit(result)}" 
+													 value="Managed"/> | 
+					<h:commandButton action="#{resultController.remove(result)}" 
+													 value="Delete"/>
+				</h:column>
+			</h:dataTable>
+
+			<h:commandButton action="#{resultController.add}" 
+											 value="Result create"/>
+		</h:form>
+  </h:body>
+</html>
