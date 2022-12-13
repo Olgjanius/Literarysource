@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/XHtml.xhtml to edit this template
+-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:rich="http://richfaces.org/rich"
+      xmlns:a4j="http://richfaces.org/a4j"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+	<h:head>
+		<link rel="stylesheet" type="text/css" media="screen" href="style.css"/>
+		<title>Results editing</title>
+	</h:head>
+	<h:body>
+		<h:form>
+			<h:panelGrid columns="2">
+				<h:outputText value="Nr" />
+				<h:inputText value="#{resultController.result.nr}" />
+
+				<h:outputText value="Name" />
+				<h:inputText value="#{resultController.result.description}" >
+					<f:event type="javax.faces.event.PostValidateEvent" listener="#{resultController.postValidateStuff}" /></h:inputText>
+
+				<h:outputText value="Text" />
+				<h:inputTextarea value="#{resultController.result.text}" />
+
+				<h:outputText value="createdOn" />
+				<rich:calendar value="#{resultController.result.createdOn}" >
+					</rich:calendar>
+
+				<h:outputText value="Manage" />
+				<h:panelGrid columns="2">
+					<h:commandButton	action="#{resultController.cancelEdit}" 
+													 value="cancel"/>
+					<h:commandButton	action="#{resultController.saveEdit}" 
+													 value="save"/>
+				</h:panelGrid>
+			</h:panelGrid>
+		</h:form>DO write content</div>
+    </body>
+</html>
