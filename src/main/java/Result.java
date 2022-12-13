@@ -3,13 +3,13 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 import java.util.Date;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Inheritance;
-import javax.persistence.InheritanceType;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Inheritance;
+import jakarta.persistence.InheritanceType;
 
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
+import jakarta.persistence.Temporal;
+import jakarta.persistence.TemporalType;
 
 /**
  *
@@ -29,7 +29,7 @@ public class Result {
     private Date createdOn;
 
 	// Getter und Setter
-	
+
 	public Result() {
 	}
 
@@ -68,7 +68,7 @@ public class Result {
 		this.text = text;
 	}
 
-	
+
 	public Date getCreatedOn() {
 		return createdOn;
 	}
@@ -77,6 +77,7 @@ public class Result {
 		this.createdOn = createdOn;
 	}
 
-	
-  
+
+
+
 }

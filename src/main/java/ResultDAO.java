@@ -4,23 +4,30 @@
  */
 
 import java.util.List;
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
-import javax.persistence.Query;
+
+import jakarta.inject.Inject;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.EntityManagerFactory;
+import jakarta.persistence.Persistence;
+import jakarta.persistence.Query;
 
 /**
  *
  * @author olgadakischew
  */
 public class ResultDAO {
-    private EntityManagerFactory emf = Persistence.createEntityManagerFactory("webApplTh");
+	private EntityManagerFactory emf = null;
+
+	EntityManager em = null;
+
 
 	public List<Result> findAll() {
-		EntityManager entityManager = emf.createEntityManager();
-		Query abfrage = entityManager.createQuery("select r from Result r");
+		if (em==null) {
+			emf = Persistence.createEntityManagerFactory("literarysource");
+			em = emf.createEntityManager();
+		}
+		Query abfrage = em.createQuery("select r from Result r");
 		List<Result> alleResult = abfrage.getResultList();
-		entityManager.close();
 		return alleResult;
 	}
 }
