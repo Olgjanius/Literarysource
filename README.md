@@ -3,5 +3,5 @@ Java programm with the database connection to phpMyAdmin by the deployment with 
 System- requirements: 
 jdk18
 Maven
-Apache Tomcat Server
-XAMPP
+Apache Tomcat Server 10-0-23
+XAMPP 8.1.12-0
