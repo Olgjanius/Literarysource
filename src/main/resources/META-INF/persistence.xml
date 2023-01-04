@@ -5,7 +5,7 @@
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
     <properties>
       <property name="jakarta.persistence.jdbc.url" value="jdbc:mysql://atlas:3306/literarysource"/>
-      <property name="jakarta.persistence.jdbc.user" value="Olgjanius"/>
+      <property name="jakarta.persistence.jdbc.user" value="User"/>
       <property name="jakarta.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
       <property name="jakarta.persistence.jdbc.password" value="pwdPWD"/>
       <property name="jakarta.persistence.schema-generation.database.action" value="create"/>
